@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PlatePal - User Profile</title>
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/css/user-profile.css">
+</head>
+
+<body>
+
+<nav>
+    <h1>PlatePal</h1>
+    <div>
+        <a href="/">Home</a>
+        <a href="/establishments">Establishments</a>
+        <a href="/favorites">Favorites</a>
+        <a href="/search-users">Find Users</a>
+        <a href="/about">About</a>
+        <a href="/login" id="navLogin">Login</a>
+        <a href="/register" id="navRegister">Register</a>
+        <a href="#" id="navMyEstablishment" style="display:none;">My Establishment</a>
+        <a href="/profile" id="navProfile" style="display:none;">My Profile</a>
+        <a href="#" onclick="logout()" id="navLogout" style="display:none;">Logout</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="profile-card">
+        <div class="profile-header">
+            <img id="avatar" alt="User avatar">
+            <div>
+                <h2 id="username">User</h2>
+                <p id="description">No description yet</p>
+                <p id="accountSafetyStatus" style="color:#444; font-weight:600; margin:8px 0 6px;">Account Safety: Loading...</p>
+                <p id="accountWarning" style="display:none; color:#b42318; font-weight:600; margin:8px 0 10px;"></p>
+                <button id="blockUserBtn" onclick="blockUser()">Block User</button>
+                <button id="reportUserBtn" onclick="openReportModal()">Report User</button>
+            </div>
+        </div>
+    </div>
+
+    <h3>Recent Reviews</h3>
+    <div id="reviewsContainer">
+        <p style="color:#888;">No reviews yet from this user.</p>
+    </div>
+</div>
+
+<div id="reportUserModal" class="report-modal-backdrop" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="reportModalTitle">
+    <div class="report-modal">
+        <h3 id="reportModalTitle">Report User</h3>
+        <p id="reportModalSubtitle" class="report-modal-subtitle"></p>
+
+        <label class="report-label" for="reportReason">Reason</label>
+        <select id="reportReason" class="report-input">
+            <option value="" selected disabled>Select a reason</option>
+            <option value="Inappropriate behavior">Inappropriate behavior</option>
+            <option value="Harassment or abuse">Harassment or abuse</option>
+            <option value="Spam or scam activity">Spam or scam activity</option>
+            <option value="Impersonation or fake account">Impersonation or fake account</option>
+            <option value="Other safety concern">Other safety concern</option>
+        </select>
+
+        <label class="report-label" for="reportDetails">Details (optional)</label>
+        <textarea id="reportDetails" class="report-input" rows="4" maxlength="500" placeholder="Add context to help moderators review this report."></textarea>
+
+        <div class="report-modal-actions">
+            <button class="report-cancel-btn" type="button" onclick="closeReportModal()">Cancel</button>
+            <button id="submitReportBtn" type="button" onclick="submitUserReport()">Submit Report</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2026 PlatePal | Restaurant Review Platform
+</footer>
+
+<script src="/js/global.js"></script>
+<script src="/js/user-profile.js"></script>
+
+</body>
+</html>
+

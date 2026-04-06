@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PlatePal - Establishment Details</title>
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/css/establishment-details.css">
+</head>
+
+<body>
+
+<nav>
+    <h1>PlatePal</h1>
+    <div>
+        <a href="/">Home</a>
+        <a href="/establishments">Establishments</a>
+        <a href="/favorites">Favorites</a>
+        <a href="/search-users">Find Users</a>
+        <a href="/about">About</a>
+        <a href="/login" id="navLogin">Login</a>
+        <a href="/register" id="navRegister">Register</a>
+        <a href="#" id="navMyEstablishment" style="display:none;">My Establishment</a>
+        <a href="/profile" id="navProfile" style="display:none;">My Profile</a>
+        <a href="#" onclick="logout()" id="navLogout" style="display:none;">Logout</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div id="restaurantHeader" class="restaurant-header"></div>
+
+    <div class="reviews-section">
+        <div class="reviews-header">
+            <h2>Reviews</h2>
+            <div class="review-search">
+                <input type="search" id="reviewSearch" placeholder="Search reviews (user, title, or text)" oninput="setReviewFilter(this.value)">
+                <button class="btn btn-secondary btn-small" id="toggleHiddenBtn" onclick="toggleHiddenReviews()" style="margin-left: 10px;">Show hidden reviews</button>
+                <div id="reviewFilterInfo" style="display:none; margin-top:8px; color:#444; font-size:14px;"></div>
+            </div>
+        </div>
+
+        <div id="createReviewForm"></div>
+
+        <div id="reviewsContainer"></div>
+
+        <div id="showMoreContainer" class="show-more-container" style="display:none;">
+            <button class="show-more-btn" onclick="loadMoreReviews()">Show More</button>
+        </div>
+    </div>
+</div>
+
+<div id="editReviewModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Edit Review</h2>
+            <button class="close-modal" type="button" onclick="closeEditModal()">×</button>
+        </div>
+        <div id="editFormContainer"></div>
+    </div>
+</div>
+
+<div id="ownerResponseModal" class="owner-response-modal">
+    <div class="owner-response-modal-content">
+        <div class="owner-response-modal-header">
+            <span>Respond to Review</span>
+            <span class="owner-response-close" onclick="closeOwnerResponseModal()">×</span>
+        </div>
+        <div class="form-group">
+            <label for="ownerResponseText">Response</label>
+            <textarea id="ownerResponseText" placeholder="Write your response..."></textarea>
+        </div>
+        <div class="form-actions">
+            <button class="btn btn-primary" onclick="submitOwnerResponse()">Submit Response</button>
+            <button class="btn btn-secondary" onclick="closeOwnerResponseModal()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<div id="editOwnerResponseModal" class="owner-response-modal">
+    <div class="owner-response-modal-content">
+        <div class="owner-response-modal-header">
+            <span>Edit Response</span>
+            <span class="owner-response-close" onclick="closeEditOwnerResponseModal()">×</span>
+        </div>
+        <div class="form-group">
+            <label for="editOwnerResponseText">Response</label>
+            <textarea id="editOwnerResponseText" placeholder="Edit your response..."></textarea>
+        </div>
+        <div class="form-actions">
+            <button class="btn btn-primary" onclick="updateOwnerResponse()">Update Response</button>
+            <button class="btn btn-secondary" onclick="closeEditOwnerResponseModal()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<div id="editEstablishmentModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Edit Establishment</h2>
+            <button class="close-modal" type="button" onclick="closeEditEstablishmentModal()">×</button>
+        </div>
+
+        <div class="form-group">
+            <label for="editEstName">Name</label>
+            <input type="text" id="editEstName">
+        </div>
+
+        <div class="form-group">
+            <label for="editEstEmoji">Icon</label>
+            <input type="text" id="editEstEmoji" placeholder="e.g., Japanese">
+        </div>
+
+        <div class="form-group">
+            <label for="editEstImage">Image URL</label>
+            <input type="text" id="editEstImage" placeholder="https://example.com/restaurant.jpg">
+            <small style="color: #555;">Optional: add a direct image URL to show on establishment cards and details.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="editEstCuisine">Cuisine</label>
+            <input type="text" id="editEstCuisine">
+        </div>
+
+        <div class="form-group">
+            <label for="editEstLocation">Location</label>
+            <input type="text" id="editEstLocation">
+        </div>
+
+        <div class="form-group">
+            <label for="editEstDescription">Description</label>
+            <textarea id="editEstDescription"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="editEstPhone">Phone</label>
+            <input type="text" id="editEstPhone">
+        </div>
+
+        <div class="form-group">
+            <label for="editEstAddress">Address</label>
+            <input type="text" id="editEstAddress">
+        </div>
+
+        <div class="form-group">
+            <label for="editEstHours">Operating Hours</label>
+            <input type="text" id="editEstHours" placeholder="e.g., 11:00 AM - 10:00 PM">
+        </div>
+
+        <div class="form-actions">
+            <button class="btn btn-primary" onclick="saveEstablishmentChanges()">Save Changes</button>
+            <button class="btn btn-secondary" onclick="closeEditEstablishmentModal()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2026 PlatePal | Restaurant Review Platform
+</footer>
+
+<script src="/js/global.js"></script>
+<script src="/js/establishment-details.js"></script>
+
+</body>
+</html>
+

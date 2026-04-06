@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PlatePal - Search Users</title>
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/css/search-users.css">
+</head>
+
+<body>
+
+<nav>
+    <h1>PlatePal</h1>
+    <div>
+        <a href="/">Home</a>
+        <a href="/establishments">Establishments</a>
+        <a href="/favorites">Favorites</a>
+        <a href="/search-users">Find Users</a>
+        <a href="/about">About</a>
+        <a href="/login" id="navLogin">Login</a>
+        <a href="/register" id="navRegister">Register</a>
+        <a href="#" id="navMyEstablishment" style="display:none;">My Establishment</a>
+        <a href="/profile" id="navProfile" style="display:none;">My Profile</a>
+        <a href="#" onclick="logout()" id="navLogout" style="display:none;">Logout</a>
+    </div>
+</nav>
+
+<div class="header">
+    <h1>Find Users</h1>
+    <p>Search for other PlatePal members and view their profiles.</p>
+</div>
+
+<div class="container">
+    <div class="search-section">
+        <input id="searchInput" type="text" placeholder="Search by username or bio">
+        <button onclick="searchUsers()">Search</button>
+    </div>
+
+    <div id="usersGrid" class="users-grid"></div>
+
+    <div id="noUsersMessage" class="no-users" style="display:none;">
+        <h3>No users found</h3>
+        <p>Try another search or check back later.</p>
+    </div>
+</div>
+
+<footer>
+    © 2026 PlatePal | Restaurant Review Platform
+</footer>
+
+<script src="/js/global.js"></script>
+<script src="/js/search-users.js"></script>
+
+</body>
+</html>
+

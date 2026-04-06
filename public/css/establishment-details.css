@@ -1,0 +1,605 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+nav {
+    background-color: #8B0000;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Restaurant Banner Section */
+.restaurant-header {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.restaurant-banner {
+    width: 210px;
+    min-width: 210px;
+    height: 210px;
+    background: #f3f3f3;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.restaurant-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.restaurant-banner .emoji {
+    font-size: 80px;
+}
+
+.restaurant-info {
+    flex: 1;
+}
+
+.restaurant-info h1 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.restaurant-meta {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.rating-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.stars {
+    color: #FFA500;
+    font-size: 18px;
+}
+
+.rating-text {
+    color: #666;
+    font-size: 14px;
+}
+
+.contact-info {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    color: #666;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-favorite {
+    background-color: #FFB6C1;
+    color: #8B0000;
+    flex: 1;
+}
+
+.btn-favorite:hover {
+    background-color: #FF69B4;
+}
+
+.btn-favorite.added {
+    background-color: #FF1493;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #8B0000;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #660000;
+}
+
+.btn-secondary {
+    background-color: #ddd;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background-color: #bbb;
+}
+
+.btn-small {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+/* Reviews Section */
+.reviews-section {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.reviews-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+}
+
+.reviews-header h2 {
+    color: #333;
+}
+
+/* Create Review Form */
+.create-review {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border-left: 4px solid #8B0000;
+}
+
+.create-review h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.star-rating-input {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.star-rating-input {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.star-input {
+    cursor: pointer;
+    font-size: 28px;
+    color: #ddd;
+    transition: all 0.2s;
+}
+
+.star-input:hover,
+.star-input.active {
+    color: #FFA500;
+}
+
+.star-input.half-active {
+    background: linear-gradient(90deg, #FFA500 50%, #ddd 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.login-prompt-form {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Review Cards */
+.reviews-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.review-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fafafa;
+}
+
+.review-header {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.review-user-info {
+    flex: 1;
+}
+
+.review-username {
+    font-weight: bold;
+    color: #8B0000;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.review-username:hover {
+    text-decoration: underline;
+}
+
+.review-meta {
+    font-size: 12px;
+    color: #999;
+    margin-top: 3px;
+}
+
+.review-badge {
+    display: inline-block;
+    background-color: #FFD700;
+    color: #333;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+.review-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.review-body {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.review-body.truncated {
+    max-height: 60px;
+    overflow: hidden;
+    position: relative;
+}
+
+.review-body.truncated::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: linear-gradient(transparent, #fafafa);
+}
+
+.read-more {
+    color: #8B0000;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 12px;
+    display: inline-block;
+}
+
+.review-rating {
+    color: #FFA500;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.review-actions {
+    display: flex;
+    gap: 15px;
+    padding: 12px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 12px;
+    font-size: 13px;
+}
+
+.action-group {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.helpful-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+.helpful-btn:hover,
+.unhelpful-btn:hover {
+    color: #8B0000;
+}
+
+.helpful-btn.active,
+.unhelpful-btn.active {
+    color: #8B0000;
+}
+
+.unhelpful-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+.review-edit-delete {
+    display: flex;
+    gap: 10px;
+}
+
+/* Owner Response */
+.owner-response {
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 15px;
+    border-left: 4px solid #8B0000;
+}
+
+.owner-response-header {
+    font-weight: bold;
+    color: #8B0000;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+.owner-response-text {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.response-date {
+    color: #999;
+    font-size: 11px;
+    margin-top: 8px;
+}
+
+/* Show More Button */
+.show-more-container {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.show-more-btn {
+    padding: 12px 30px;
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.show-more-btn:hover {
+    background-color: #660000;
+}
+
+/* Edit Review Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #ddd;
+}
+
+.modal-header h2 {
+    color: #333;
+    margin: 0;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #666;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-modal:hover {
+    color: #8B0000;
+}
+
+/* Owner Response Modal */
+.owner-response-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow-y: auto;
+}
+
+.owner-response-modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.owner-response-modal-header {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.owner-response-close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.owner-response-close:hover {
+    color: #000;
+}
+
+footer {
+        width: 100%;
+        text-align: center;
+        padding: 18px 0;
+        margin-top: 40px;
+        background-color: #f4f4f4;
+        color: #666;
+        font-size: 14px;
+        border-top: 1px solid #e8e8e8;
+        text-align: center;
+    }
+
+    .restaurant-banner {
+        margin: 0 auto;
+    }
+
+    .reviews-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+.half-star {
+    opacity: 0.5;
+}

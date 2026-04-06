@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PlatePal - Profile</title>
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/css/profile.css">
+</head>
+
+<body>
+
+<nav>
+    <h1>PlatePal</h1>
+    <div>
+        <a href="/">Home</a>
+        <a href="/establishments">Establishments</a>
+        <a href="/favorites">Favorites</a>
+        <a href="/search-users">Find Users</a>
+        <a href="/about">About</a>
+        <a href="/login" id="navLogin">Login</a>
+        <a href="/register" id="navRegister">Register</a>
+        <a href="#" id="navMyEstablishment" style="display:none;">My Establishment</a>
+        <a href="/profile" id="navProfile" style="display:none;">My Profile</a>
+        <a href="#" onclick="logout()" id="navLogout" style="display:none;">Logout</a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="profile-card">
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <img id="avatar" alt="" aria-hidden="true" style="display:none;">
+                <div id="avatarInitial" class="avatar-initial" style="display:flex;"></div>
+            </div>
+            <div>
+                <h2 id="username">Username</h2>
+                <p id="ownerTitle" style="display:none; font-weight:600; color:#444; margin:4px 0 10px;"></p>
+                <p id="description">No description yet</p>
+                <button onclick="toggleEdit()">Edit Profile</button>
+            </div>
+        </div>
+
+        <div id="editSection" class="edit-section-container" style="display:none;">
+            <div style="display:flex; gap:20px; align-items:flex-start;">
+                <div class="edit-avatar-section">
+                    <div id="editAvatarCircle" class="avatar-circle">
+                        <img id="editAvatarImage" alt="Avatar preview" style="display:none;">
+                        <span id="editAvatarPlaceholder">Upload</span>
+                    </div>
+                    <input type="file" id="avatarUpload" class="avatar-upload-input" accept="image/*">
+                </div>
+                <div style="flex:1;">
+                    <label class="edit-section-label">Short Description</label>
+                    <textarea id="descInput" placeholder="Write a short description about yourself..."></textarea>
+                    <div class="button-group">
+                        <button onclick="saveProfile()">Save Changes</button>
+                        <button class="cancel-btn" onclick="cancelEdit()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3>My Recent Reviews</h3>
+        <div id="myReviewsContainer">
+            <p style="color:#888;">You have not written any reviews yet.</p>
+        </div>
+
+        <h3 id="ownerResponsesTitle" style="display:none; margin-top: 30px;">My Responses (as Owner)</h3>
+        <div id="ownerResponsesContainer" style="display:none;">
+            <p style="color:#888;">You have not responded to any reviews yet.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2026 PlatePal | Restaurant Review Platform
+</footer>
+
+<script src="/js/global.js"></script>
+<script src="/js/profile.js"></script>
+
+</body>
+</html>
+

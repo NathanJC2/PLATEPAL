@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PlatePal - Establishments</title>
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/css/establishments.css">
+</head>
+
+<body>
+
+<nav>
+    <h1>PlatePal</h1>
+    <div>
+        <a href="/">Home</a>
+        <a href="/establishments">Establishments</a>
+        <a href="/favorites">Favorites</a>
+        <a href="/search-users">Find Users</a>
+        <a href="/about">About</a>
+        <a href="/login" id="navLogin">Login</a>
+        <a href="/register" id="navRegister">Register</a>
+        <a href="#" id="navMyEstablishment" style="display:none;">My Establishment</a>
+        <a href="/profile" id="navProfile" style="display:none;">My Profile</a>
+        <a href="#" onclick="logout()" id="navLogout" style="display:none;">Logout</a>
+    </div>
+</nav>
+
+<div class="header">
+    <h2>Browse All Establishments</h2>
+    <p>Discover amazing restaurants in your area</p>
+</div>
+
+<div class="filters-section">
+    <input type="text" id="searchInput" placeholder="Search restaurants...">
+    
+    <select id="ratingFilter">
+        <option value="all">All Ratings</option>
+        <option value="5">5 Stars</option>
+        <option value="4">4★ & Above</option>
+        <option value="3">3★ & Above</option>
+        <option value="2">2★ & Above</option>
+        <option value="1">1★ & Above</option>
+    </select>
+
+    <select id="cuisineFilter">
+        <option value="all">All Cuisines</option>
+        <option value="Filipino">Filipino</option>
+        <option value="Japanese">Japanese</option>
+        <option value="Italian">Italian</option>
+        <option value="Korean">Korean</option>
+        <option value="Indian">Indian</option>
+        <option value="Thai">Thai</option>
+        <option value="Vietnamese">Vietnamese</option>
+        <option value="American">American</option>
+        <option value="Cafe">Cafe</option>
+    </select>
+
+    <button type="button" onclick="applyFilters()">Search</button>
+</div>
+
+<div class="section">
+    <div id="noResults" class="no-results" style="display:none;">
+        <h3>No establishments found</h3>
+        <p>Try adjusting your search or filters</p>
+    </div>
+    <div class="cards" id="establishmentsContainer"></div>
+</div>
+
+<footer>
+    © 2026 PlatePal | Restaurant Review Platform
+</footer>
+
+<script src="/js/global.js"></script>
+<script src="/js/establishments.js"></script>
+
+</body>
+</html>

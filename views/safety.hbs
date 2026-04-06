@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PlatePal - Safety & Moderation</title>
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/css/safety.css">
+</head>
+
+<body>
+
+<nav>
+    <h1>PlatePal</h1>
+    <div>
+        <a href="/">Home</a>
+        <a href="/establishments">Establishments</a>
+        <a href="/favorites">Favorites</a>
+        <a href="/search-users">Find Users</a>
+        <a href="/about">About</a>
+        <a href="/login" id="navLogin">Login</a>
+        <a href="/register" id="navRegister">Register</a>
+        <a href="#" id="navMyEstablishment" style="display:none;">My Establishment</a>
+        <a href="/profile" id="navProfile" style="display:none;">My Profile</a>
+        <a href="#" onclick="logout()" id="navLogout" style="display:none;">Logout</a>
+    </div>
+</nav>
+
+<div class="header">
+    <h2>Safety & Moderation</h2>
+    <p>Manage reports and keep the community safe.</p>
+</div>
+
+<div class="container">
+    <div class="section">
+        <h2>Blocked Users</h2>
+        <div id="blockedUsersList" class="list"></div>
+        <div id="noBlockedMessage" class="no-items" style="display:none;">
+            <h3>No blocked users</h3>
+            <p>You're all clear.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Reported Users</h2>
+        <div id="reportedUsersList" class="list"></div>
+        <div id="noReportedUsersMessage" class="no-items" style="display:none;">
+            <h3>No reported users</h3>
+            <p>You have not submitted user reports yet.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Reported Reviews</h2>
+        <div id="reportedReviewsList" class="list"></div>
+        <div id="noReportsMessage" class="no-items" style="display:none;">
+            <h3>No reports</h3>
+            <p>No reviews are pending moderation.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2026 PlatePal | Restaurant Review Platform
+</footer>
+
+<script src="/js/global.js"></script>
+<script src="/js/safety.js"></script>
+
+</body>
+</html>
+
