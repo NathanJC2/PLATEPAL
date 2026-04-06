@@ -18,9 +18,9 @@ const app = express();
 
 /* ---------------- DATABASE CONNECTION ---------------- */
 
+const mongoURI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/PlatePalDB";
 
-
-mongoose.connect("mongodb://127.0.0.1:27017/PlatePalDB")
+mongoose.connect(mongoURI)
 .then(async () => {
     console.log("Connected to MongoDB");
 })
