@@ -11,7 +11,9 @@ async function hashPassword(password) {
     return await bcrypt.hash(password, salt);
 }
 
-mongoose.connect("mongodb://127.0.0.1:27017/PlatePalDB")
+const mongoURI = process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/PlatePalDB";
+
+mongoose.connect(mongoURI)
 .then(async function () {
     console.log("Connected to MongoDB for seeding");
 
